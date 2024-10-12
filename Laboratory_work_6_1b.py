@@ -16,8 +16,6 @@ else:
     array.append(None)
     last_num = array[index]
     array[index] = number
-    for i in range(index+1, len(array)):
+    for i in range(index + 1, len(array)):
         array[i], last_num = last_num, array[i]
     print(array)
-
-

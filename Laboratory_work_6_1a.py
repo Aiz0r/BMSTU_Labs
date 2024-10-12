@@ -6,7 +6,7 @@ number = float(input("Введите целочисленное число дл�
 index = float(input("Введите индекс числа для вставки: "))
 
 # Проверка ввода на корректность
-if int(number) != number or int(index) != index or index < 0:
+if int(number) != number or int(index) != index or index < 0 or len(array) < index:
     print("Введенные данные некорректны")
 else:
 
@@ -16,6 +16,6 @@ else:
     array.insert(index, number)
 
     # Вывод
-    print("Получившийся список: ", end = '')
+    print("Получившийся список: ", end='')
     for i in array:
         print(format(i, 'g') + " ", end='')
