@@ -18,4 +18,9 @@ else:
     array[index] = number
     for i in range(index + 1, len(array)):
         array[i], last_num = last_num, array[i]
-    print(array)
+
+    # Вывод
+    print("Получившийся список: ", end='')
+    for i in array:
+        print(format(i, 'g') + " ", end='')
+
