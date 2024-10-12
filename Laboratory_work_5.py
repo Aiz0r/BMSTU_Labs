@@ -7,7 +7,7 @@ max_y = -1e9
 min_y = 1e9
 
 start = float(input("Введите координату начала: "))
-end = float(input("Введите координату конца "))
+end = float(input("Введите координату конца: "))
 step = float(input("Введите шаг: "))
 
 if start > end:
@@ -38,8 +38,7 @@ else:
 
     # Решение дополнительной задачи
     print(
-        f"Количество положительных значений первой функции: {number_of_positive_s}\nКоличество положительных значений первой функции: {number_of_negative_s}\n")
-
+        f"Количество положительных значений первой функции: {number_of_positive_s}\nКоличество отрицательных значений первой функции: {number_of_negative_s}\n")
 
     marks = float(input("Введите целое количество засечек от 4 до 8: "))
     if not (4 <= marks <= 8):
@@ -62,9 +61,7 @@ else:
         last_el = 0
         print(" " * 8, end='')
         while temp_marks < marks:
-            #number = (max_y - min_y) / (marks - 1) * temp_marks + min_y
-            #print(f"{number:.4f}" + " " * (scale // (marks-1)), end='')
-            if temp_marks == 0 :
+            if temp_marks == 0:
                 axis_y += format(min_y, 'g')
                 last_el = len(format(min_y, 'g'))
             elif temp_marks == marks - 1:
@@ -93,4 +90,3 @@ else:
             else:
                 print(f"{b: <7.5g}|", end='')
                 print(" " * indent + "*")
-
