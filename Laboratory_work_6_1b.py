@@ -1,26 +1,42 @@
 # Насута Кирилл ИУ7-12Б Программа, позволяющая задать список и добавить элемент в заданное место списка алгоритмическим способом
 
 # Ввод
-array = list(map(int, input("Введите элементы cписка через пробел: ").split()))
-number = float(input("Введите целочисленное число для вставки: "))
-index = float(input("Введите индекс числа для вставки: "))
+err_flag = False
+n = float(input("Введите количество элементов списка: "))
 
-# Проверка ввода на корректность
-if int(number) != number or int(index) != index or index < 0 or len(array) < index:
-    print("Введенные данные некорректны")
-else:
+if int(n) != n or n < 0:
+    print("Введенное количество элементов некорректно")
+    err_flag = True
 
+if not err_flag:
+    array = []
+    for i in range(int(n)):
+        el = int(input(f"Введите элемент с индексом {i}: "))
+        array.append(el)
+
+if not err_flag:
+    number = float(input("Введите целочисленное число для вставки: "))
+
+    if int(number) != number:
+        print("Введенное число некорректно")
+        err_flag = True
+
+    if not err_flag:
+        index = float(input("Введите индекс числа для вставки: "))
+
+        if int(index) != index or index < 0 or index > len(array):
+            print("Введенный индекс некорректен")
+            err_flag = True
+if not err_flag:
     # Добавление элемента
     number = int(number)
     index = int(index)
     array.append(None)
-    last_num = array[index]
+    for i in range(len(array)-1, index, -1):
+        array[i] = array[i-1]
     array[index] = number
-    for i in range(index + 1, len(array)):
-        array[i], last_num = last_num, array[i]
 
     # Вывод
     print("Получившийся список: ", end='')
     for i in array:
         print(format(i, 'g') + " ", end='')
-

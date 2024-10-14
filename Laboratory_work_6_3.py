@@ -1,14 +1,25 @@
 # Насута Кирилл ИУ7-12Б Программа, позволяющая задать список и находящая значение K-го экстремума в списке
 
 # Ввод
-array = list(map(int, input("Введите элементы cписка через пробел: ").split()))
+err_flag = False
+n = float(input("Введите количество элементов списка: "))
+
+if int(n) != n or n <= 3:
+    print("Введенное количество элементов некорректно")
+    err_flag = True
+
+if not err_flag:
+    array = []
+    for i in range(int(n)):
+        el = int(input(f"Введите элемент с индексом {i}: "))
+        array.append(el)
+
 k = float(input("Введите номер экстремума: "))
 
-# Проверка ввода на корректность
-if int(k) != k or k <= 0 or len(array) < k:
-    print("Введенные данные некорректны")
-else:
+if int(k) != k or k <= 0:
+    print("Введенное количество экстремумов некорректно")
 
+if not err_flag:
     # Поиск экстремума
     counter = 0
     k = int(k)
@@ -19,7 +30,6 @@ else:
             if counter == k:
                 el = array[i]
                 break
-
     # Вывод
     if el != None:
         print(f"Значение {k:g}-го экстремума в списке равно {el:g}")

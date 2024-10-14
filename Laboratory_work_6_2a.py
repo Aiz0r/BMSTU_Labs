@@ -1,13 +1,27 @@
 # Насута Кирилл ИУ7-12Б Программа, позволяющая задать список и удалить элемент из данного места списка
 
 # Ввод
-array = list(map(int, input("Введите элементы cписка через пробел: ").split()))
-index = float(input("Введите индекс элемента списка для удаления: "))
+err_flag = False
+n = float(input("Введите количество элементов списка: "))
 
-# Проверка ввода на корректность
-if int(index) != index or index < 0 or len(array) < index:
-    print("Введенные данные некорректны")
-else:
+if int(n) != n or n <= 0:
+    print("Введенное количество элементов некорректно")
+    err_flag = True
+
+if not err_flag:
+    array = []
+    for i in range(int(n)):
+        el = int(input(f"Введите элемент с индексом {i}: "))
+        array.append(el)
+
+if not err_flag:
+    index = float(input("Введите индекс числа для удаления: "))
+
+    if int(index) != index or index < 0 or index >= len(array):
+        print("Введенный индекс некорректен")
+        err_flag = True
+
+if not err_flag:
 
     # Удаление элемента
     index = int(index)
