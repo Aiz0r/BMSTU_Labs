@@ -23,15 +23,17 @@ if not err_flag:
     # Поиск экстремума
     counter = 0
     k = int(k)
-    el = None
-    for i in range(1, len(array)-1):
-        if (array[i] > array[i-1] and array[i] > array[i+1]) or (array[i] < array[i-1] and array[i] < array[i+1]):
+    el = None # нужный экстремум
+    for i in range(1, len(array) - 1):
+        if (array[i] > array[i - 1] and array[i] > array[i + 1]) or (
+                array[i] < array[i - 1] and array[i] < array[i + 1]):
             counter += 1
             if counter == k:
                 el = array[i]
                 break
+
     # Вывод
-    if el != None:
+    if el is not None:
         print(f"Значение {k:g}-го экстремума в списке равно {el:g}")
     else:
         print(f"Не удалось найти требуемый экстремум")

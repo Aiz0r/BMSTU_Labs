@@ -14,9 +14,7 @@ if not err_flag:
         el = int(input(f"Введите элемент с индексом {i}: "))
         array.append(el)
 
-if not err_flag:
     number = float(input("Введите целочисленное число для вставки: "))
-
     if int(number) != number:
         print("Введенное число некорректно")
         err_flag = True
@@ -33,6 +31,7 @@ if not err_flag:
     number = int(number)
     index = int(index)
     array.insert(index, number)
+    n += 1
 
     # Вывод
     print("Получившийся список: ", end='')

@@ -26,6 +26,7 @@ if not err_flag:
     # Удаление элемента
     index = int(index)
     array.pop(index)
+    n -= 1
 
     # Вывод
     print("Получившийся список: ", end='')

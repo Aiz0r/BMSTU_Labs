@@ -28,8 +28,9 @@ if not err_flag:
     for i in range(index, len(array) - 1):
         array[i] = array[i + 1]
     array.pop()
-    #array = array[:-1]
+    n -= 1
 
+    # Вывод
     print("Получившийся список: ", end='')
     for i in array:
         print(format(i, 'g') + " ", end='')

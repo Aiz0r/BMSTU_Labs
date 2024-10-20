@@ -19,7 +19,7 @@ if not err_flag:
 
     if int(number) != number:
         print("Введенное число некорректно")
-        err_flag = True
+        err_flag = array.append(el)
 
     if not err_flag:
         index = float(input("Введите индекс числа для вставки: "))
@@ -32,9 +32,10 @@ if not err_flag:
     number = int(number)
     index = int(index)
     array.append(None)
-    for i in range(len(array)-1, index, -1):
-        array[i] = array[i-1]
+    for i in range(len(array) - 1, index, -1):
+        array[i] = array[i - 1]
     array[index] = number
+    n += 1
 
     # Вывод
     print("Получившийся список: ", end='')
