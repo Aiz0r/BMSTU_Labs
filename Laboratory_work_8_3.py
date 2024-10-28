@@ -14,7 +14,7 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
 
     # Реализация
@@ -32,3 +32,5 @@ else:
 
     # Вывод
     print(f"Первый столбец, содержащий наибольшее количество нулевых элементов, имеет индекс {max_col_ind}")
+    for i in range(lines):
+        print(a[i][max_col_ind])

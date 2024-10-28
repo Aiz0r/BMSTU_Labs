@@ -1,4 +1,4 @@
-# Насута Кирилл ИУ7-12Б Программа, позволяющая задать задать матрицу и находящая строку с наименьшим количеством четных элементов
+# Насута Кирилл ИУ7-12Б Программа, позволяющая задать матрицу и находящая строку с наименьшим количеством четных элементов
 
 # Ввод
 lines = int(input("Введите количество строк матрицы: "))
@@ -15,13 +15,13 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
 
     # Реализация
     current_amount = 0
     min_amount = col + 1
-    min_string_ind = -1
+    min_row_ind = -1
 
     for i in range(lines):
         for j in range(col):
@@ -29,8 +29,10 @@ else:
                 current_amount += 1
         if current_amount < min_amount:
             min_amount = current_amount
-            min_string_ind = i
+            min_row_ind = i
         current_amount = 0
 
     # Вывод
-    print(f"Строка, содержащая наименьшее количество четных элементов, имеет индекс {min_string_ind}")
+    print(f"Строка, содержащая наименьшее количество четных элементов, имеет индекс {min_row_ind}")
+    for j in range(col):
+        print(a[min_row_ind][j], end = ' ')

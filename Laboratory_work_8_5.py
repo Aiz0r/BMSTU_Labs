@@ -1,10 +1,10 @@
-# Насута Кирилл ИУ7-12Б Программа, позволяющая задать задать матрицу и переставляющая столбцы с максимальной и минимальной суммой
+# Насута Кирилл ИУ7-12Б Программа, позволяющая задать задать матрицу и находящая максимальное значение над главной диагональю и минимальное под побочной
 
 # Ввод
-lines = int(input("Введите количество строк квадратной матрицы: "))
-col = int(input("Введите количество квадратной столбцов: "))
+lines = int(input("Введите размерность квадратной матрицы: "))
+col = lines
 
-if lines <= 0 or col <= 0 or col != lines:
+if lines <= 0 or col <= 0:
     print("Введення размерность матрицы некорректна")
 else:
     a = [[0] * col for i in range(lines)]
@@ -15,7 +15,7 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
 
     # Реализация
@@ -24,11 +24,11 @@ else:
 
     for i in range(lines):
         for j in range(col):
-            if i + 1 == j:
-                if max_el == None or a[i][j] > max_el:
+            if i + 1 <= j:
+                if max_el is None or a[i][j] > max_el:
                     max_el = a[i][j]
-            if i - 1 + j == col - 1:
-                if min_el == None or a[i][j] < min_el:
+            if i - 1 + j >= col - 1:
+                if min_el is None or a[i][j] < min_el:
                     min_el = a[i][j]
 
     # Вывод

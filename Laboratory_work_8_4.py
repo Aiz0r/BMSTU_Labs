@@ -15,7 +15,7 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
 
     # Реализация
@@ -28,10 +28,10 @@ else:
     for j in range(col):
         for i in range(lines):
             current_amount += a[i][j]
-        if min_sum == None or current_amount < min_sum:
+        if min_sum is None or current_amount < min_sum:
             min_sum = current_amount
             min_col_ind = j
-        if max_sum == None or current_amount > max_sum:
+        if max_sum is None or current_amount > max_sum:
             max_sum = current_amount
             max_col_ind = j
         current_amount = 0
@@ -44,5 +44,5 @@ else:
     print("Полученная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()

@@ -15,13 +15,13 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
 
     # Реализация
     current_amount = 0
     min_amount = col + 1
-    min_string_ind = -1
+    min_row_ind = -1
     max_amount = -1
     max_string_ind = -1
 
@@ -31,7 +31,7 @@ else:
                 current_amount += 1
         if current_amount < min_amount:
             min_amount = current_amount
-            min_string_ind = i
+            min_row_ind = i
         if current_amount > max_amount:
             max_amount = current_amount
             max_string_ind = i
@@ -39,11 +39,11 @@ else:
 
     # Смена местами
     for j in range(col):
-        a[min_string_ind][j], a[max_string_ind][j] = a[max_string_ind][j], a[min_string_ind][j]
+        a[min_row_ind][j], a[max_string_ind][j] = a[max_string_ind][j], a[min_row_ind][j]
 
     # Вывод
     print("Полученная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end=' ')
+            print(f"{a[i][j]: ^5g}", end=' ')
         print()
