@@ -14,7 +14,7 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end = ' ')
+            print(a[i][j], end=' ')
         print()
 
     # Реализация
@@ -31,4 +31,4 @@ else:
         current_amount = 0
 
     # Вывод
-    print(f"Cтолбец, содержащий наибольшее количество нулевых элементов, имеет индекс {max_col_ind}")
+    print(f"Первый столбец, содержащий наибольшее количество нулевых элементов, имеет индекс {max_col_ind}")

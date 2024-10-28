@@ -15,7 +15,7 @@ else:
     print("Введенная матрица:")
     for i in range(lines):
         for j in range(col):
-            print(a[i][j], end = ' ')
+            print(a[i][j], end=' ')
         print()
 
     # Реализация
