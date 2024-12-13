@@ -127,7 +127,7 @@ elif less_accurate_method == 2:
     while abs(last_integ - new_integ) > eps:
         N *= 2
         last_integ = new_integ
-        new_integ = medium_rectangles_method(N, start, end)
+        new_integ = three_and_eight_method(N, start, end)
         if N >= 10 ** 10:
             N = -1
             break
